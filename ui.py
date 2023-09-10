@@ -36,7 +36,7 @@ st.sidebar.info(f"This user interface exclusively showcases contributor informat
 if selected_mode == "BORIS":
     st.title("Usersearch Dashboard - BORIS")
 
-    selected_name = st.selectbox("Select Contributor", ["None"] + list(data["text"]))
+    selected_name = st.selectbox("Type or Select a Contributer", ["None"] + list(data["text"]))
     st.markdown("---")
 
     if selected_name != "None":
@@ -92,7 +92,7 @@ else:
 
     # Display the ORCID for the selected name
     if selected_name == "None":
-        st.warning("Select a name from the side menu to display the data.")
+        st.warning("Select a Dataset from the side menu to display the data.")
     else:
         with st.spinner("Fetching data from OSF..."):
             
