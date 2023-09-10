@@ -88,7 +88,7 @@ else:
 
     processed_names = df_cleaned['processed_name'].tolist()
     processed_names.insert(0, "None")  # Add "None" option at the beginning
-    selected_name = st.selectbox("Select Contributer", processed_names)
+    selected_name = st.selectbox("Type or Select Contributer", processed_names)
 
     # Display the ORCID for the selected name
     if selected_name == "None":
