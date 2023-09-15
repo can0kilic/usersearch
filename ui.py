@@ -56,7 +56,12 @@ if selected_mode == "BORIS":
                 year_counts = year_counts.sort_values(by='date')
 
                 fig = px.scatter(year_counts, x="date", y="frequency", color="full_text_status", color_discrete_map={"open": "green", "close": "red"})
-                fig.update_layout(title="Frequency of 'Open' and 'Close' Status by Year", xaxis_title="Year", yaxis_title="Frequency")
+                fig.update_layout(
+                title="Frequency of 'Open' and 'Close' Status by Year",
+                xaxis_title="Year",
+                yaxis_title="Frequency",
+                legend_title_text=''  # Ausblenden des Legendentitels
+                )
                 
                 total_records = len(processed_df)
                 open_records = year_counts[year_counts["full_text_status"] == "open"]["frequency"].sum()
@@ -73,7 +78,10 @@ if selected_mode == "BORIS":
                 col3.metric("Closed Records", closed_records,)
                 col4.metric("Total Records", total_records)
                 st.markdown("---")
-                
+
+                info_text_oar = "Open Access Rate (OAR): percentage of Open-Access publications among total publications -> OA-Publications / Total Publications"
+                create_info_section("Open Access Rate", info_text_oar)
+
                 st.plotly_chart(fig)
             else:
                 st.error("Failed to fetch or process data.")
