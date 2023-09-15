@@ -78,7 +78,7 @@ if selected_mode == "BORIS":
             else:
                 st.error("Failed to fetch or process data.")
     else:
-        st.warning("Select a name from the side menu to display the data.")
+        st.warning("Select or type a name from the side menu to display the data.")
 
     #back to dashnoard button
 else:
