@@ -146,7 +146,7 @@ else:
                         year_counts = year_counts.sort_values(by='Year')
                         
                         fig = px.scatter(year_counts, x="Year", y="Frequency", title="Public Data OSF",
-                                        labels={"Year": "Publication Year", "Frequency": "Frequency"})
+                                        labels={"Year": "Year", "Frequency": "Frequency"})
                         min_year = int(year_counts['Year'].min())
                         max_year = int(year_counts['Year'].max())
 
