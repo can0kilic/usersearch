@@ -153,7 +153,8 @@ else:
                         fig.update_xaxes(
                             tickvals=list(range(min_year, max_year+1)), # Setze die Tick-Positionen
                             ticktext=[str(year) for year in range(min_year, max_year+1)] # Setze die Tick-Labels
-                        
+                        )
+            
                         st.plotly_chart(fig)
 
                     else:
