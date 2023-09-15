@@ -147,6 +147,12 @@ else:
                         
                         fig = px.scatter(year_counts, x="Year", y="Frequency", title="Public Data OSF",
                                         labels={"Year": "Publication Year", "Frequency": "Frequency"})
+                        min_year = int(year_counts['Year'].min())
+                        max_year = int(year_counts['Year'].max())
+
+                        fig.update_xaxes(
+                            tickvals=list(range(min_year, max_year+1)), # Setze die Tick-Positionen
+                            ticktext=[str(year) for year in range(min_year, max_year+1)] # Setze die Tick-Labels
                         st.plotly_chart(fig)
 
                     else:
