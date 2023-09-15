@@ -77,11 +77,10 @@ if selected_mode == "BORIS":
                 col2.metric("Open Records", open_records,)
                 col3.metric("Closed Records", closed_records,)
                 col4.metric("Total Records", total_records)
-                st.markdown("---")
-
                 info_text_oar = "Open Access Rate (OAR): percentage of Open-Access publications among total publications -> OA-Publications / Total Publications"
                 create_info_section("Open Access Rate", info_text_oar)
-
+                st.markdown("---")
+                
                 st.plotly_chart(fig)
             else:
                 st.error("Failed to fetch or process data.")
